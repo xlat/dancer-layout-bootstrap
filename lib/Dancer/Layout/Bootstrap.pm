@@ -78,11 +78,17 @@ L<http://www.lavishbootstrap.com/> - create new colour schemes
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.04';
 
 get '/' => sub {
     template 'index';
 };
+
+get '/bootstrap-example' => sub {
+    set layout => 'empty';
+    template 'bootstrap-example';
+};
+
 
 get '/user/login' => sub {
     template 'login';

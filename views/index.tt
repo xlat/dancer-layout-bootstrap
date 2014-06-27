@@ -11,45 +11,42 @@
 -->
 
 <div id="page">
-      <div id="sidebar" class="span3 sidebar-nav">
-        <ul id="sidebar-items" class="nav nav-list">
-          <li>
-            <h3 class="nav-header">Join the community</h3>
-            <ul class="nav nav-list">
-
-              <li><a href="http://perldancer.org/">PerlDancer</a></li>
-              <li><a href="http://twitter.com/PerlDancer/">Official Twitter</a></li>
-              <li><a href="http://github.com/sukria/Dancer/">GitHub Community</a></li>
+      <div id="sidebar">
+            <ul class="list-group">
+             <li class="list-group-item active">Join the community</li>
+              <li class="list-group-item"><a href="http://perldancer.org/">PerlDancer</a></li>
+              <li class="list-group-item"><a href="http://twitter.com/PerlDancer/">Official Twitter</a></li>
+              <li class="list-group-item"><a href="http://github.com/sukria/Dancer/">GitHub Community</a></li>
             </ul>
-          </li>
           
-          <li>
-            <h3 class="nav-header">Browse the documentation</h3>
-
-            <ul class="nav nav-list">
-              <li><a
+            <ul class="list-group">
+             <li class="list-group-item active">Browse the documentation</li>
+              <li class="list-group-item"><a
               href="http://search.cpan.org/dist/Dancer/lib/Dancer/Introduction.pod">Introduction</a></li>
-              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Cookbook.pod">Cookbook</a></li>
-              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Deployment.pod">Deployment Guide</a></li>
-              <li><a
+              <li class="list-group-item"><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Cookbook.pod">Cookbook</a></li>
+              <li class="list-group-item"><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Deployment.pod">Deployment Guide</a></li>
+              <li class="list-group-item"><a
               href="http://search.cpan.org/dist/Dancer/lib/Dancer/Tutorial.pod"
               title="a tutorial to build a small blog engine with Dancer">Tutorial</a></li>
             </ul>
-          </li>
 
-          <li>
-            <h3 class="nav-header">Your application's environment</h3>
-
-            <ul class="nav nav-list">
-                <li>Location: <code>...</code></li>
-                <li>Template engine: <code><% settings.template %></code></li>
-                <li>Logger: <code><% settings.logger %></code></li>
-                <li>Environment: <code><% settings.environment %></code></li>
+            <ul class="list-group">
+		<li class="list-group-item active">Bootstrap links</li>
+              <li class="list-group-item"><a href="http://getbootstrap.com/css/">CSS</a></li>
+              <li class="list-group-item"><a href="http://getbootstrap.com/components">Components</a></li>
+              <li class="list-group-item"><a href="http://getbootstrap.com/javascript">Javascript</a></li>
+              <li class="list-group-item"><a href="http://getbootstrap.com/customize/">Customize</a></li>
+              <li class="list-group-item"><a href="http://getbootstrap.com/getting-started/#examples" title="take a look as examples">Examples</a></li>
+              <li class="list-group-item"><a href="http://bootswatch.com/">Themes</a></li>
             </ul>
-
-          </li>
-        </ul>
-
+            
+            <ul class="list-group">
+             <li class="list-group-item active">Your application's environment</li>
+	      <li class="list-group-item">Location: <code>...</code></li>
+	      <li class="list-group-item">Template engine: <code><% settings.template %></code></li>
+	      <li class="list-group-item">Logger: <code><% settings.logger %></code></li>
+	      <li class="list-group-item">Environment: <code><% settings.environment %></code></li>
+            </ul>
       </div>
 
       <div id="content">
@@ -58,13 +55,13 @@
           <h2>You&rsquo;ve joined the dance floor!</h2>
         </div>
 
-        <div id="getting-started" class="hero-unit span9">
+        <div id="getting-started" class="hero-unit col-md-9">
           <h1>Getting started</h1>
           <h2>Here&rsquo;s how to get dancing:</h2>
                     
           <h3><a href="#" id="about_env_link">About your application's environment</a></h3>
 
-          <div id="about-content" style="display: none;">
+          <div id="about-content" style="display: none;" class="well">
             <table>
                 <tbody>
                 <tr>
@@ -141,6 +138,9 @@
                 </p>
             </li>
 
+            <li>
+                <h2>Try bootstrap <a href="/bootstrap-example">example</a>.</h2>
+            </li>
           </ol>
         </div>
       </div>

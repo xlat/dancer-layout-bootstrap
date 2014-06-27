@@ -20,7 +20,7 @@ WriteMakefile1(
     MIN_PERL_VERSION => '5.006',
     META_MERGE => {
         resources => {
-            repository => "http://github.com/Corion/$repo",
+            repository => "http://github.com/Corion/$repo", #see forks
         },
     },
     BUILD_REQUIRES => {

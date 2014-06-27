@@ -2,66 +2,72 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title><% settings.appname %></title>
-<link rel="stylesheet" href="<% request.uri_base %>/css/bootstrap.css" />
-<link href="<% request.uri_base %>/css/bootstrap-responsive.css" rel="stylesheet">
-<link rel="stylesheet" href="<% request.uri_base %>/css/table-style.css" />
+<link rel="stylesheet" href="<% request.uri_base %>/bootstrap-3.2.0/css/bootstrap.css" />
 
-<script src="<% request.uri_base %>/javascripts/jQuery/jquery-1.7.2.min.js"></script>
+<link rel="stylesheet" href="<% request.uri_base %>/css/theme.css" />
 
+<script src="<% request.uri_base %>/javascripts/jQuery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
 
-<div id="navbar" class="navbar">
-<div class="navbar-inner">
-    <div class="container">
-      <a class="brand"><% settings.appname %></a>
-
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse " role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><% settings.appname %></a>
+        </div>
+        <div class="navbar-collapse collapse">
+		
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="<% request.uri_base %>">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+	     <% IF session.user %>
+	     <li class="active"><a href="#">Action1</a></li>
+	     <li><a href="#">Action2</a></li>
+	     <% ELSE %>
+	     <li><a href="<% request.uri_base %>/user/login">Log in</a></li>
+	     <% END %>
 <% IF session.user %>
-<div class="btn-group pull-right">
-<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="icon-user"></i> <% session.user.name |html %>
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Profile</a></li>
-              <li class="divider"></li>
-              <li><a href="<% request.uri_base %>/user/logout">Log '<%session.user.name |html %>' out</a></li>
-            </ul>
-</div>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <% session.user.name |html %><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="<% request.uri_base %>/user/logout">Log '<%session.user.name |html %>' out</a></li>
+              </ul>
+            </li>
 <% END %>
-        <ul class="nav">
-          <li><a href="<% request.uri_base %>">Home</a></li>
-<% IF session.user %>
-<li><a class="active navbar-link" href="#">Action1</a></li>
-<li><a class="active navbar-link" href="#">Action2</a></li>
-<% ELSE %>
-<li><a href="<% request.uri_base %>/user/login">Log in</a></li>
-<% END %>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-</div>
-</div>
-</div>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
 <% IF flash.error %>
-<div id="msg_error" class="alert alert-error"> <a class="close" data-dismiss="alert" href="#">×</a><% flash.error | html %> </div>
+<div id="msg_error" class="alert alert-danger"><a class="close" data-dismiss="alert" href="#">×</a><% flash.error | html %> </div>
 <% END %>
 <% IF flash.message %>
-<div id="msg_message" class="alert"> <a class="close" data-dismiss="alert" href="#">×</a><% flash.message |html %> </div>
+<div id="msg_message" class="alert"><a class="close" data-dismiss="alert" href="#">×</a><% flash.message |html %> </div>
 <% END %>
 <% IF flash.success %>
-<div id="msg_success" class="alert alert-success"> <a class="close" data-dismiss="alert" href="#">×</a><% flash.success |html %> </div>
+<div id="msg_success" class="alert alert-success"><a class="close" data-dismiss="alert" href="#">×</a><% flash.success |html %> </div>
 <% END %>
 
 <% content %>
 
-<footer id="footer" class="span11">
+<footer id="footer" class="col-md-11">
 Powered by <a href="http://perldancer.org/">Dancer</a> <% dancer_version %>
-Using <a href="http://glyphicons.com/">Glyphicons</a> and <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+Using <a href="http://glyphicons.com/">Glyphicons</a> and <a href="http://getbootstrap.com/">Bootstrap</a>
 </footer>
-<script src="<% request.uri_base %>/javascripts/bootstrap-2.3.0/bootstrap.js"></script>
-<script src="<% request.uri_base %>/javascripts/bootstrap-2.3.0/bootstrap-alert.js"></script>
+<script src="<% request.uri_base %>/bootstrap-3.2.0/js/bootstrap.js"></script>
 </body>
 </html>
