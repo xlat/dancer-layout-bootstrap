@@ -85,8 +85,7 @@ get '/' => sub {
 };
 
 get '/bootstrap-example' => sub {
-    set layout => 'empty';
-    template 'bootstrap-example';
+    template 'bootstrap-example', {}, { layout => undef };
 };
 
 
